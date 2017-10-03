@@ -1,0 +1,17 @@
+{
+  "name": "mediaplayer",
+  "version": "1.0.0",
+  "description": "Media player for Windows",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "AK",
+  "license": "ISC",
+  "devDependencies": {
+    "electron-prebuilt": "^1.4.13"
+  },
+  "dependencies": {
+    "mousetrap": "^1.6.1"
+  }
+}

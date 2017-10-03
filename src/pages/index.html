@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>AK Media Player</title>
+  <link rel="stylesheet" href="../css/materialize.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+
+<body>
+  <div class="app-control">
+    <div class="drag-bar"></div>
+    <i class="video-back material-icons dp48">arrow_back</i>
+    <i class="app-minimize material-icons dp48">remove</i>
+    <i class="app-fullscreen material-icons dp48">fullscreen</i>
+    <i class="app-close material-icons dp48">close</i>
+  </div>
+  <div class="browser active">
+    <nav>
+      <div class="nav-wrapper">
+        <a class="brand-logo center"></a>
+      </div>
+    </nav>
+    <ul class="folder-list collection"></ul>
+    <div class="empty-folder"></div>
+  </div>
+  <div class="player">
+    <div class="video_container">
+      <video autoplay preload></video>
+      <div id="videoControls" class="video-controls">
+        <div id="progress" class="progress-wrapper col s12">
+          <div id="progress_box" class="progress-bar">
+            <span id="play_progress" class="progress"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    require('../js/index.js');
+  </script>
+</body>
+
+</html>

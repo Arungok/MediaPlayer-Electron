@@ -1,0 +1,22 @@
+@mixin keyframe($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin animation($dur, $delay, $dir, $name, $itr) {
+  -webkit-animation: $name $dur $dir;
+  -webkit-animation-iteration-count: $itr;
+  -webkit-animation-delay: $delay;
+  animation: $name $dur $dir;
+  animation-iteration-count: $itr;
+  animation-delay: $delay;
+}
+
+@mixin transition($property) {
+  -webkit-transition: $property;
+  transition: $property;
+}

@@ -1,0 +1,184 @@
+body {
+  -webkit-user-select: none;
+  background-color: #424242;
+  color: #f5f5f5; }
+  body input[type="submit"],
+  body input[type="reset"],
+  body input[type="button"],
+  body input[type="text"],
+  body button,
+  body textarea {
+    -webkit-app-region: no-drag; }
+  body ul:empty {
+    display: none; }
+  body .app-control {
+    position: fixed;
+    width: 100%;
+    z-index: 99;
+    display: flex;
+    flex-basis: 1;
+    flex-grow: 1; }
+    body .app-control .drag-bar {
+      -ms-overflow-style: scrollbar;
+      -webkit-app-region: drag;
+      width: 100%; }
+    body .app-control .material-icons {
+      padding: 10px;
+      cursor: pointer;
+      z-index: 100;
+      color: white;
+      position: relative; }
+    body .app-control .video-back {
+      display: none; }
+    body .app-control.video-player-on {
+      display: none; }
+      body .app-control.video-player-on.active {
+        display: flex; }
+      body .app-control.video-player-on .video-back {
+        display: block; }
+      body .app-control.video-player-on ~ .browser nav {
+        position: relative; }
+  body .player {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: black;
+    display: none; }
+    body .player .video_container {
+      position: relative;
+      align-self: center;
+      width: 100%;
+      height: 100%; }
+      body .player .video_container video {
+        width: 100%;
+        object-fit: contain;
+        height: 100%;
+        max-width: 100%; }
+      body .player .video_container .video-controls {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        color: white;
+        margin: 0;
+        display: none;
+        height: 26px;
+        padding: 10px 20px; }
+        body .player .video_container .video-controls .progress-wrapper {
+          width: 100%;
+          height: 100%; }
+          body .player .video_container .video-controls .progress-wrapper .progress-bar {
+            height: 100%; }
+            body .player .video_container .video-controls .progress-wrapper .progress-bar .progress {
+              background: #cbcbcb;
+              position: relative;
+              overflow: visible;
+              margin: 0; }
+              body .player .video_container .video-controls .progress-wrapper .progress-bar .progress:after {
+                content: "";
+                display: inline-block;
+                width: 15px;
+                height: 15px;
+                border: 2px solid #555;
+                background-color: white;
+                border-radius: 50%;
+                right: 0;
+                position: absolute;
+                top: 50%;
+                transform: translate(50%, -50%);
+                z-index: 1; }
+        body .player .video_container .video-controls.active {
+          display: flex; }
+    body .player.active {
+      display: flex; }
+    body .player.play:after, body .player.pause:after {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      font-family: 'Material Icons';
+      margin-left: auto;
+      margin-right: auto;
+      position: absolute;
+      display: flex;
+      align-self: center;
+      justify-content: center;
+      font-size: 75px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0; }
+    body .player.play:after {
+      content: "play_arrow";
+      opacity: 1; }
+    body .player.pause:after {
+      content: "pause";
+      opacity: 1; }
+  body .browser {
+    display: none;
+    padding-top: 44px; }
+    body .browser nav {
+      position: fixed;
+      height: 44px;
+      line-height: 1.5em;
+      z-index: 1;
+      top: 0; }
+      body .browser nav .nav-wrapper {
+        background-color: #212121; }
+        body .browser nav .nav-wrapper .brand-logo {
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          font-size: 20px;
+          width: 50px;
+          text-transform: capitalize;
+          background-image: url(../images/logo.png);
+          height: 100%;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center; }
+    body .browser.active {
+      display: block; }
+    body .browser .folder-list {
+      padding: 0;
+      margin: 0;
+      border: 0;
+      overflow-y: auto;
+      height: calc(100% - 44px);
+      width: 100%;
+      position: absolute; }
+      body .browser .folder-list .folder-item {
+        background-color: inherit;
+        border-bottom: 1px solid #f5f5f5;
+        display: flex;
+        width: 100%;
+        cursor: pointer;
+        outline: 0;
+        -moz-user-select: none;
+        /* Firefox */
+        -ms-user-select: none;
+        /* Internet Explorer */
+        -khtml-user-select: none;
+        /* KHTML browsers (e.g. Konqueror) */
+        -webkit-user-select: none;
+        /* Chrome, Safari, and Opera */
+        -webkit-touch-callout: none;
+        /* Disable Android and iOS callouts*/ }
+        body .browser .folder-list .folder-item i.material-icons {
+          font-size: 3em; }
+        body .browser .folder-list .folder-item span {
+          margin-left: 20px;
+          align-self: center; }
+    body .browser .empty-folder:empty {
+      display: none; }
+
+@-webkit-keyframes showHide {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+@keyframes showHide {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
